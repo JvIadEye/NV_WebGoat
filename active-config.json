@@ -1,0 +1,182 @@
+{
+  "version": "1.1.0",
+  "applicationId": "f5b10bfe-8b90-4238-ae54-4db6fe34e2af",
+  "host": "https://noname.nsvnlab.io.vn/pharmacy/api/v2",
+  "sources": [
+    {
+      "name": "Test",
+      "openApi": {
+        "sourceUrl": "https://noname.nsvnlab.io.vn/active/specs/activePharmaLabOAS.json"
+      },
+      "auth_mappings": []
+    }
+  ],
+  "auths": [
+    {
+      "name": "Pharmacist",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{pharmacist}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy Admin",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{pharmacy admin}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy Admin BasicAuth",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Basic {{admin basic auth}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy User 1",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{user1_token}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy User 2",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{user2_token}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy User 3 expired",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{user3_token}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy User 4 expired and not-BP-Format",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{user4 token}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy User 5 noIAT&EXP",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{user5 token}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "Pharmacy User Reader",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{reader token}}",
+          "key": "Authorization"
+        }
+      ]
+    }
+  ],
+  "app": {
+    "secrets": [
+      {
+        "name": "admin basic auth",
+        "type": "text",
+        "data": {
+          "value": "TGlyb3kgSmVua2luczpBYTEyMzQ1Ng=="
+        }
+      },
+      {
+        "name": "pharmacist",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSG9nIEthcG9lcmEiLCJ1aWQiOiI2YzUyNzlhOS0zMzFjLTQzZDAtOTg5Mi00OGFiNTA1YTEzMzYiLCJyb2xlIjoicGhhcm1hY2lzdCIsInJlZ2lvbiI6IlVTLUVhc3QtMSIsImlhdCI6MTczNjMzNDk3NSwiZXhwIjoxNzk5NDUwMTc1fQ.-yWElf1f1Z7PXyCpbn-n_QzPwKGoY9EuB3FdAfmbCI8"
+        }
+      },
+      {
+        "name": "pharmacy admin",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTGlyb3kgSmVua2lucyIsInVpZCI6IjZjNTI3OWE5LTMzMWMtNDNkMC05ODkyLTQ4ZmI1MDVhMTMzNyIsInJvbGUiOiJhZG1pbiIsInJlZ2lvbiI6IlVTLUVhc3QtMSIsImlhdCI6MTczNjMzNDkxOSwiZXhwIjoxNzk5NDUwMTE5fQ.eVPGSBdU40g9Vd75UwunJ2KPjN-jx3FpAK-vJUqQQEg"
+        }
+      },
+      {
+        "name": "reader token",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVG9tIFJlYWRlciIsInVpZCI6ImRlZDQ2NmYwLTY5ZGEtNDJlYS1hMWVkLTFkN2IyMGQ0NDA4NyIsInJvbGUiOiJyZWFkZXIiLCJyZWdpb24iOiJVUy1FYXN0LTEiLCJpYXQiOjE3MzYzMzk1NjQsImV4cCI6MTc5OTQ1NDc2NH0.qVE1koH8OQgaBD9n-fD72hRX1vdHRvcNxNyWcBxjRA4"
+        }
+      },
+      {
+        "name": "user1_token",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmVycnkgU21pdGgiLCJ1aWQiOiJjYTA0OTZkNC0zOTVkLTRhMTctOWM1Ny1mODQ1MmFiOTIwMGYiLCJyb2xlIjoidXNlciIsInJlZ2lvbiI6IlVTLUVhc3QtMSIsImlhdCI6MTczNjMzOTY0OSwiZXhwIjoxNzk5NDU0ODQ5fQ.PUH7oXK_4h4CWhso3rP24LHf5UM5ZxM-e2DaqHe5VWo"
+        }
+      },
+      {
+        "name": "user2_token",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiUmljayBTYW5jaGV6IiwidWlkIjoiYmE4MTQ1MGYtMWZiZS00NDJkLTliYTktZDcxZGNlY2I3ZmVkIiwicm9sZSI6InVzZXIiLCJyZWdpb24iOiJVUy1FYXN0LTEiLCJpYXQiOjE3MzYzMzk2ODMsImV4cCI6MTc5OTQ1NDg4M30.8KN2aNf_6NUdCOIPgatAN-raLuBrQ8_rU-CaC2nB9W4"
+        }
+      },
+      {
+        "name": "user3_token",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSGFpcnkgU29uZm9yZCIsInVpZCI6ImNjZjNmYmQzLTk0YzYtNGQ3NS1hZjE4LWU1OTg3MGI2NjEyMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjY3NDkxNzM5LCJleHAiOjE2Njc0OTE3OTl9.TLkBrO2oojTmjj4uQIrlRn9PjULm2lqxxjrpRe59T8w"
+        }
+      },
+      {
+        "name": "user4 token",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmVycnkgU21pdGgiLCJ1aWQiOiJjYTA0OTZkNC0zOTVkLTRhMTctOWM1Ny1mODQ1MmFiOTIwMGYiLCJyb2xlIjoidXNlciIsInJlZ2lvbiI6IlVTLUVhc3QtMSIsInRpbWUiOnsiWCI6MTcwMTYyNzMxNywiWSI6MTcwMDYyNzMxN319.b9nYQGiaR0hb3KTYkc3aixXu8SHCbnQ-vlg2RGnEr9w"
+        }
+      },
+      {
+        "name": "user5 token",
+        "type": "text",
+        "data": {
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmVycnkgU21pdGgiLCJ1aWQiOiJjYTA0OTZkNC0zOTVkLTRhMTctOWM1Ny1mODQ1MmFiOTIwMGYiLCJyb2xlIjoidXNlciIsInJlZ2lvbiI6IlVTLUVhc3QtMSJ9.mY9WLiFd2Q9Krn8O_rIq9iwf18esC1OxKyETLfvh3EI"
+        }
+      }
+    ]
+  }
+}
